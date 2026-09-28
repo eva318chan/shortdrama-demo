@@ -51,7 +51,7 @@ function buildFeed(){
     el.className = 'slide' + (locked?' locked':'');
     el.dataset.id = d.id;
     el.innerHTML = `
-      <video playsinline webkit-playsinline loop preload="none" poster="posters/${d.id}.jpg"
+      <video playsinline webkit-playsinline muted loop preload="metadata" poster="posters/${d.id}.jpg"
         ${locked?'':'data-src="videos/'+d.id+'.mp4"'}></video>
       <div class="shade"></div>
       ${locked?`<div class="lockbox">
@@ -65,6 +65,7 @@ function buildFeed(){
         <h2>${d.title}</h2><p>${d.desc}</p>
       </div>
       <div class="side">
+        <button class="abtn" data-mute="${d.id}">🔇<small>聲音</small></button>
         <button class="abtn ${likes[d.id]?'liked':''}" data-like="${d.id}">❤<small>${likes[d.id]?'1':''}</small></button>
         <button class="abtn" data-info="${d.id}">ⓘ<small>詳情</small></button>
       </div>
@@ -75,6 +76,12 @@ function buildFeed(){
   feed.onclick = e=>{
     const un = e.target.closest('[data-unlock]');
     if(un){ unlockDrama(un.dataset.unlock); return; }
+    const mu = e.target.closest('[data-mute]');
+    if(mu){ const slide = mu.closest('.slide'), v = slide.querySelector('video');
+      v.muted = !v.muted;
+      mu.innerHTML = (v.muted?'🔇':'🔊') + '<small>聲音</small>';
+      if(!v.muted && v.paused) v.play().catch(()=>{});
+      return; }
     const lk = e.target.closest('[data-like]');
     if(lk){ const id = lk.dataset.like;
       if(likes[id]) delete likes[id]; else likes[id]=1;

@@ -21,7 +21,7 @@ button{font-family:inherit}
 .view{position:fixed;inset:0;display:none;flex-direction:column}
 .view.on{display:flex}
 /* ---------- feed ---------- */
-#feed{scroll-snap-type:y mandatory;overflow-y:auto;scrollbar-width:none}
+#feed{position:absolute;inset:0;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}
 #feed::-webkit-scrollbar{display:none}
 .slide{position:relative;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
   background:#000;overflow:hidden;flex:none}
@@ -152,7 +152,7 @@ button{font-family:inherit}
 <div class="coins" id="coinBadge">🪙 <span id="coinNum">100</span></div>
 
 <!-- 劇場 feed -->
-<div class="view on" id="view-feed"><div id="feed" style="display:contents"></div></div>
+<div class="view on" id="view-feed"><div id="feed"></div></div>
 
 <!-- 片庫 -->
 <div class="view" id="view-lib">
