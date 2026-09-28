@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>短劇場 · Demo</title>
+<meta name="description" content="短劇場 — 直式短劇平台演示版">
+<style>
+:root{
+  --bg:#0b0d12; --bg2:#141821; --card:#171c26;
+  --red:#f43f5e; --gold:#d4a94e;
+  --text:#f2f4f8; --muted:#9aa0ae; --line:rgba(255,255,255,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  overflow:hidden;user-select:none;-webkit-user-select:none}
+button{font-family:inherit}
+/* ---------- views ---------- */
+.view{position:fixed;inset:0;display:none;flex-direction:column}
+.view.on{display:flex}
+/* ---------- feed ---------- */
+#feed{scroll-snap-type:y mandatory;overflow-y:auto;scrollbar-width:none}
+#feed::-webkit-scrollbar{display:none}
+.slide{position:relative;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
+  background:#000;overflow:hidden;flex:none}
+.slide video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.slide .shade{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(transparent 55%,rgba(0,0,0,.78))}
+.slide.locked video{filter:blur(14px) brightness(.55)}
+.lockbox{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:12px;z-index:3;text-align:center;padding:0 40px}
+.lockbox .ico{font-size:44px}
+.lockbox h3{font-size:19px;letter-spacing:.06em}
+.lockbox p{color:var(--muted);font-size:13.5px;line-height:1.7}
+.unlock-btn{background:var(--gold);color:#141414;border:0;border-radius:999px;
+  padding:12px 34px;font-size:15px;font-weight:700;letter-spacing:.08em;cursor:pointer}
+.unlock-btn:active{transform:scale(.96)}
+.meta{position:absolute;left:14px;right:74px;bottom:26px;z-index:2}
+.meta .genre{display:inline-block;font-size:11.5px;color:var(--gold);border:1px solid var(--gold);
+  border-radius:999px;padding:2px 10px;margin-bottom:8px;letter-spacing:.1em}
+.meta h2{font-size:20px;margin-bottom:6px;letter-spacing:.04em}
+.meta p{font-size:13px;color:#c9cdd6;line-height:1.65;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.side{position:absolute;right:10px;bottom:110px;z-index:2;display:flex;
+  flex-direction:column;gap:18px;align-items:center}
+.abtn{background:rgba(20,24,33,.55);border:1px solid var(--line);color:#fff;
+  width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.abtn small{position:absolute;margin-top:64px;font-size:10.5px;color:#c9cdd6}
+.abtn.liked{color:var(--red);border-color:var(--red)}
+.progress{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.18);z-index:4}
+.progress i{display:block;height:100%;width:0;background:var(--red)}
+.playhint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  z-index:2;pointer-events:none;font-size:56px;opacity:0;transition:.25s}
+.playhint.show{opacity:.85}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;
+  justify-content:center;padding:14px;padding-top:max(14px,env(safe-area-inset-top));
+  pointer-events:none}
+.topbar .logo{font-weight:800;font-size:17px;letter-spacing:.22em}
+.topbar .logo b{color:var(--red)}
+.coins{position:fixed;top:12px;top:max(12px,env(safe-area-inset-top));right:12px;z-index:21;
+  background:rgba(20,24,33,.72);border:1px solid var(--line);border-radius:999px;
+  padding:7px 14px;font-size:13px;color:var(--gold);font-weight:700;backdrop-filter:blur(6px)}
+/* ---------- library ---------- */
+#view-lib{padding-top:max(64px,env(safe-area-inset-top));padding-bottom:76px;overflow-y:auto}
+.lib-head{padding:6px 16px 4px}
+.lib-head h1{font-size:22px;letter-spacing:.14em}
+.lib-head h1 b{color:var(--red)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--muted);
+  border-radius:999px;padding:7px 15px;font-size:13px;cursor:pointer}
+.chip.on{color:#141414;background:var(--gold);border-color:var(--gold);font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:4px 16px 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer}
+.card .pv{position:relative;aspect-ratio:16/10;background:#000}
+.card .pv img{width:100%;height:100%;object-fit:cover}
+.card .dur{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.72);
+  font-size:11px;padding:2px 7px;border-radius:6px}
+.card .lk{position:absolute;left:6px;top:6px;background:rgba(0,0,0,.72);font-size:12px;
+  padding:3px 8px;border-radius:999px;color:var(--gold)}
+.card .t{padding:10px 12px}
+.card .t h3{font-size:14.5px;margin-bottom:3px}
+.card .t span{font-size:12px;color:var(--muted)}
+/* ---------- me ---------- */
+#view-me{padding-top:max(64px,env(safe-area-inset-top));padding-bottom:76px;overflow-y:auto}
+.me-head{padding:14px 20px;display:flex;align-items:center;gap:14px}
+.avatar{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--gold));
+  display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff}
+.me-head h2{font-size:18px}
+.me-head p{font-size:12.5px;color:var(--muted)}
+.coinbox{margin:6px 16px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:18px;display:flex;align-items:center;justify-content:space-between}
+.coinbox .n{font-size:30px;font-weight:800;color:var(--gold)}
+.coinbox .n small{font-size:13px;color:var(--muted);font-weight:400}
+.claim{background:var(--gold);border:0;color:#141414;font-weight:700;border-radius:999px;
+  padding:10px 22px;font-size:14px;cursor:pointer}
+.claim:disabled{opacity:.4}
+.sect{margin:18px 16px 0}
+.sect h3{font-size:15px;letter-spacing:.12em;margin-bottom:10px;color:var(--muted)}
+.hrow{display:flex;gap:10px;align-items:center;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;padding:9px 10px;margin-bottom:8px;cursor:pointer}
+.hrow img{width:86px;height:52px;object-fit:cover;border-radius:6px;background:#000}
+.hrow .tt{font-size:13.5px}
+.hrow .tt span{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+.empty{color:var(--muted);font-size:13px;text-align:center;padding:18px}
+.note{margin:22px 16px 0;font-size:12px;color:var(--muted);line-height:1.8;
+  border-top:1px solid var(--line);padding-top:14px}
+/* ---------- tabbar ---------- */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;
+  background:rgba(11,13,18,.96);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);backdrop-filter:blur(10px)}
+.tab{flex:1;background:none;border:0;color:var(--muted);font-size:11px;padding:10px 0 8px;cursor:pointer}
+.tab .i{font-size:21px;display:block;margin-bottom:2px}
+.tab.on{color:var(--text)}
+.tab.on .i{color:var(--red)}
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;
+  background:rgba(0,0,0,.6)}
+.modal.on{display:flex}
+.sheet{background:var(--bg2);border-radius:18px 18px 0 0;width:100%;max-width:560px;
+  max-height:82dvh;overflow-y:auto;padding:0 0 30px;animation:up .25s ease}
+@keyframes up{from{transform:translateY(40px);opacity:.5}}
+.sheet img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.sheet .in{padding:16px 20px}
+.sheet .genre{font-size:11.5px;color:var(--gold);border:1px solid var(--gold);
+  border-radius:999px;padding:2px 10px;letter-spacing:.1em}
+.sheet h2{font-size:20px;margin:10px 0 6px}
+.sheet .du{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.sheet p.d{font-size:14px;color:#c9cdd6;line-height:1.8;margin-bottom:18px}
+.bigbtn{width:100%;border:0;border-radius:12px;padding:14px;font-size:16px;font-weight:700;
+  cursor:pointer;letter-spacing:.06em}
+.bigbtn.play{background:var(--red);color:#fff}
+.bigbtn.unlock{background:var(--gold);color:#141414}
+.bigbtn:active{transform:scale(.98)}
+.x{position:sticky;top:0;margin-left:auto;display:block;background:rgba(0,0,0,.5);
+  color:#fff;border:0;width:36px;height:36px;border-radius:50%;font-size:17px;margin:10px 10px -46px auto;
+  position:relative;z-index:2;cursor:pointer}
+/* toast */
+#toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);z-index:99;
+  background:rgba(20,24,33,.95);border:1px solid var(--line);color:var(--text);
+  padding:11px 22px;border-radius:999px;font-size:13.5px;opacity:0;pointer-events:none;transition:.25s;
+  white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="logo"><b>短劇場</b> · DEMO</div></div>
+<div class="coins" id="coinBadge">🪙 <span id="coinNum">100</span></div>
+
+<!-- 劇場 feed -->
+<div class="view on" id="view-feed"><div id="feed" style="display:contents"></div></div>
+
+<!-- 片庫 -->
+<div class="view" id="view-lib">
+  <div class="lib-head"><h1><b>片</b>庫</h1></div>
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- 我的 -->
+<div class="view" id="view-me">
+  <div class="me-head">
+    <div class="avatar">劇</div>
+    <div><h2>追劇達人</h2><p>短劇場演示帳號 · 數據只存本機</p></div>
+  </div>
+  <div class="coinbox">
+    <div class="n">🪙 <span id="coinNum2">100</span> <small>金幣</small></div>
+    <button class="claim" id="claimBtn">每日領取 +50</button>
+  </div>
+  <div class="sect"><h3>已解鎖</h3><div id="unlockedList"></div></div>
+  <div class="sect"><h3>觀看歷史</h3><div id="histList"></div></div>
+  <div class="note">演示版說明：前 3 部免費，其餘每部 10 金幣解鎖（金幣可每日領取，僅作流程演示）。影片為示範內容，不作永久儲存；正式版需會員系統、支付及版權授權。</div>
+</div>
+
+<nav class="tabbar">
+  <button class="tab on" data-v="feed"><span class="i">▶</span>劇場</button>
+  <button class="tab" data-v="lib"><span class="i">▦</span>片庫</button>
+  <button class="tab" data-v="me"><span class="i">◉</span>我的</button>
+</nav>
+
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+<div id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
