@@ -75,7 +75,7 @@ function buildFeed(){
   // events (delegate)
   feed.onclick = e=>{
     const un = e.target.closest('[data-unlock]');
-    if(un){ unlockDrama(un.dataset.unlock); return; }
+    if(un){ askUnlock(un.dataset.unlock); return; }
     const mu = e.target.closest('[data-mute]');
     if(mu){ const slide = mu.closest('.slide'), v = slide.querySelector('video');
       v.muted = !v.muted;
@@ -99,21 +99,36 @@ function buildFeed(){
       else{ v.pause(); hint.classList.add('show'); setTimeout(()=>hint.classList.remove('show'),600); }
     }
   };
-  // autoplay visible
+  // autoplay visible + preload nearby
   const io = new IntersectionObserver(es=>{
     es.forEach(en=>{
-      const v = en.target.querySelector('video');
-      const bar = en.target.querySelector('.progress i');
+      const slide = en.target, v = slide.querySelector('video');
+      const bar = slide.querySelector('.progress i');
+      const hint = slide.querySelector('.playhint');
+      const locked = isLocked(slide.dataset.id);
+      if(!locked && en.intersectionRatio > 0 && !v.src && v.dataset.src){ v.src = v.dataset.src; v.load(); }
       if(en.isIntersecting && en.intersectionRatio > .6){
-        if(!isLocked(en.target.dataset.id)){
-          if(!v.src && v.dataset.src) v.src = v.dataset.src;
-          v.play().catch(()=>{});
-          pushHist(en.target.dataset.id);
+        if(!locked){
+          try{
+            var pr = v.play();
+            if(pr && pr.then) pr.then(function(){ hint.classList.remove('show'); })
+              .catch(function(){ hint.classList.add('show'); });
+          }catch(e){ hint.classList.add('show'); }
+          pushHist(slide.dataset.id);
+          // preload next slide for smooth swiping
+          var nxt = slide.nextElementSibling;
+          if(nxt && !isLocked(nxt.dataset.id)){
+            var nv = nxt.querySelector('video');
+            if(nv && !nv.src && nv.dataset.src){ nv.src = nv.dataset.src; nv.load(); }
+          }
         }
       } else { v.pause(); if(bar) bar.style.width='0'; }
     });
   },{root:feed, threshold:[0,.6]});
   document.querySelectorAll('.slide').forEach(s=>io.observe(s));
+  // eager-load the first visible video so it starts instantly
+  var f0 = document.querySelector('.slide:not(.locked) video');
+  if(f0 && !f0.src && f0.dataset.src){ f0.src = f0.dataset.src; f0.load(); }
   // progress bars
   feed.addEventListener('timeupdate', e=>{
     const v = e.target, s = v.closest('.slide');
@@ -123,6 +138,21 @@ function buildFeed(){
 function pushHist(id){
   hist = [id, ...hist.filter(h=>h!==id)].slice(0,20);
   store.set('hist', hist); renderMe();
+}
+function askUnlock(id){
+  const d = byId(id);
+  $('#sheet').innerHTML = `
+    <div class="cfm">
+      <h2>解鎖《${d.title}》？</h2>
+      <p>${d.genre} · ${d.dur}<br>需要 <b>🪙 ${COST}</b> 金幣（餘額 ${coins}）</p>
+      <div class="row">
+        <button class="bigbtn ghost" id="cfNo">取消</button>
+        <button class="bigbtn unlock" id="cfYes">確認解鎖</button>
+      </div>
+    </div>`;
+  $('#modal').classList.add('on');
+  $('#cfNo').onclick = ()=> $('#modal').classList.remove('on');
+  $('#cfYes').onclick = ()=>{ $('#modal').classList.remove('on'); unlockDrama(id); };
 }
 function unlockDrama(id){
   const d = byId(id);
@@ -174,7 +204,7 @@ function openDetail(id){
   $('#mclose').onclick = ()=> $('#modal').classList.remove('on');
   $('#mact').onclick = ()=>{
     $('#modal').classList.remove('on');
-    if(isLocked(id)) unlockDrama(id);
+    if(isLocked(id)) askUnlock(id);
     else playInFeed(id);
   };
 }
