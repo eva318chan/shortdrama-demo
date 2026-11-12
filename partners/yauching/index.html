@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<meta id="metaDesc" name="description" content="Yau Ching 邱晴 品牌合作專頁 — 廣告拍攝、活動出席、品牌代言、社交媒體推廣查詢。參選嗰屆最年輕參選者之一、民選港姐冠軍，青春、運動、甜美於一身。" />
+<link rel="icon" href="data:," />
+<title>邱晴｜廣告／活動／演出合作查詢</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1d1a26;
+    --ink-soft:#4c4759;
+    --muted:#7a748c;
+    --accent:#6558a6;
+    --accent-soft:#a79fd0;
+    --paper:#ffffff;
+    --wash:#eeebf5;
+    --wash-2:#f4f2f9;
+    --dark:#221e2e;
+    --line:#d9d4e6;
+    --line-light:#e7e3f0;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --latin:"Cormorant Garamond","Noto Serif TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+
+  /* ── Top bar ─────────────────────────── */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-light)}
+  .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
+  .brand{text-decoration:none;line-height:1.15}
+  .brand .b-name{font-family:var(--latin);font-size:clamp(20px,2.6vw,27px);letter-spacing:.14em;font-weight:600}
+  .brand .b-sub{font-size:10px;letter-spacing:.34em;color:var(--ink-soft);margin-top:3px}
+  .topnav{display:flex;align-items:center;gap:clamp(14px,3vw,34px)}
+  .topnav a.nl{text-decoration:none;font-size:14px;color:var(--ink-soft)}
+  .topnav a.nl:hover{color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;font-size:14.5px;padding:14px 20px;border:1px solid var(--ink);transition:background .2s,color .2s}
+  .btn .arr{font-style:normal}
+  .btn-outline{background:transparent;color:var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:#fff}
+  .btn-dark{background:var(--dark);color:#fff;border-color:var(--dark)}
+  .btn-dark:hover{background:var(--accent);border-color:var(--accent)}
+  @media(max-width:640px){.topnav a.nl{display:none}}
+
+  /* ── Language bar ────────────────────── */
+  .langbar{border-bottom:1px solid var(--line-light)}
+  .langbar-in{display:flex;justify-content:flex-end;align-items:center;gap:14px;padding-top:10px;padding-bottom:10px;font-size:13.5px;color:var(--ink-soft)}
+  .langbar select{font:inherit;font-size:13.5px;padding:7px 10px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:0}
+
+  /* ── Hero ────────────────────────────── */
+  .hero{position:relative;background:var(--wash);overflow:hidden}
+  .hero-img{position:absolute;inset:0}
+  .hero-img img{width:100%;height:100%;object-fit:cover;object-position:26% 18%}
+  .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(238,235,245,0) 28%,rgba(238,235,245,.5) 46%,rgba(238,235,245,.93) 62%,rgba(238,235,245,.98) 78%)}
+  .hero .credit{position:absolute;left:14px;bottom:12px;z-index:3;font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.92);text-shadow:0 1px 6px rgba(0,0,0,.45)}
+  .hero-inner{position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-end;min-height:min(94vh,880px);padding-top:48px;padding-bottom:48px}
+  .hero-txt{width:min(540px,47%)}
+  .kicker{font-size:12px;letter-spacing:.3em;color:var(--accent);font-weight:700;margin:0 0 22px}
+  .hero-txt h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.6vw,58px);line-height:1.32;margin:0 0 26px}
+  .hero-txt h1 .hl{color:var(--accent)}
+  .hero-txt .lead{color:var(--ink-soft);font-size:16.5px;margin:0 0 34px;max-width:30em}
+  .hero-cta{max-width:400px}
+  .hero-cta .btn{width:100%;padding:20px 22px;font-size:15.5px}
+  .hero-note{font-size:12.5px;color:var(--muted);margin-top:14px}
+  @media(max-width:860px){
+    .hero-img{position:relative;inset:auto}
+    .hero-img img{height:auto;aspect-ratio:4/4.6;object-position:center 20%}
+    .hero-shade{display:none}
+    .hero .credit{top:12px;bottom:auto}
+    .hero-inner{min-height:0;justify-content:flex-start;padding-top:36px;padding-bottom:46px}
+    .hero-txt{width:100%}
+  }
+
+  /* ── Scroll strip ────────────────────── */
+  .scroll-strip{border-bottom:1px solid var(--line-light)}
+  .scroll-in{display:flex;justify-content:space-between;gap:16px;padding:13px 0;font-size:11px;letter-spacing:.3em;color:var(--ink-soft)}
+
+  /* ── Sections ────────────────────────── */
+  section.blk{padding:clamp(64px,9vw,118px) 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:clamp(36px,5vw,58px);flex-wrap:wrap}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.4;margin:14px 0 0}
+  .sec-head .side{color:var(--ink-soft);font-size:15px;max-width:22em}
+  .sec-label{font-size:12px;letter-spacing:.3em;color:var(--accent);font-weight:700;margin:0}
+
+  /* Works — selected case rows */
+  .case{display:grid;grid-template-columns:250px 1fr auto;gap:clamp(16px,3.5vw,48px);padding:30px 0;border-top:1px solid var(--line);align-items:start}
+  .case:last-of-type{border-bottom:1px solid var(--line)}
+  .case .place{font-family:var(--latin);font-size:clamp(23px,2.6vw,32px);font-weight:600;letter-spacing:.06em;line-height:1.15}
+  .case .meta{font-size:11.5px;letter-spacing:.22em;color:var(--muted);margin-top:10px}
+  .case h3{margin:2px 0 8px;font-size:20px;letter-spacing:.02em}
+  .case .c-main p{margin:0;color:var(--ink-soft);font-size:15px;max-width:36em}
+  .case .idx{font-family:var(--latin);font-style:italic;font-size:clamp(26px,3vw,38px);color:var(--accent-soft);line-height:1;padding-top:2px}
+  @media(max-width:700px){
+    .case{grid-template-columns:1fr auto;padding:24px 0}
+    .case .c-main{grid-column:1/-1}
+  }
+
+  /* Services grid */
+  .svc-sec{background:var(--wash-2)}
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+  .svc{padding:clamp(26px,3.6vw,44px);position:relative;background:transparent}
+  .svc:nth-child(odd){border-right:1px solid var(--line)}
+  .svc:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .svc .s-num{position:absolute;top:22px;right:26px;font-family:var(--latin);font-style:italic;font-size:28px;color:var(--accent-soft)}
+  .svc .s-en{font-size:11.5px;letter-spacing:.28em;color:var(--accent);font-weight:700;margin:0 0 12px}
+  .svc h3{margin:0 0 12px;font-size:21px}
+  .svc p{margin:0 0 18px;color:var(--ink-soft);font-size:15px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{border:1px solid var(--line);background:#fff;font-size:12.5px;padding:4px 11px;color:var(--ink-soft)}
+  @media(max-width:700px){.svc-grid{grid-template-columns:1fr}.svc:nth-child(odd){border-right:none}.svc{border-bottom:1px solid var(--line)}.svc:last-child{border-bottom:none}}
+
+  /* Profile */
+  .profile-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:start}
+  .profile-photo img{width:100%;aspect-ratio:4/4.6;object-fit:cover;object-position:center 18%}
+  .profile-photo .credit{font-size:11px;letter-spacing:.16em;color:var(--muted);margin-top:10px}
+  .profile-txt h2{font-family:var(--latin);font-size:clamp(34px,4.4vw,52px);letter-spacing:.1em;font-weight:600;margin:12px 0 2px;line-height:1.1}
+  .profile-txt .p-zh{font-family:var(--serif);font-size:19px;letter-spacing:.4em;margin:0 0 26px}
+  .profile-txt .p-slogan{font-family:var(--serif);font-size:clamp(21px,2.6vw,27px);line-height:1.6;margin:0 0 22px}
+  .profile-txt p.body{color:var(--ink-soft);font-size:15.5px;margin:0 0 16px}
+  .fact-table{width:100%;border-collapse:collapse;margin:26px 0 8px;font-size:14.5px}
+  .fact-table th,.fact-table td{border-top:1px solid var(--line-light);padding:11px 6px;text-align:left;vertical-align:top}
+  .fact-table th{width:108px;color:var(--muted);font-weight:500;letter-spacing:.08em;white-space:nowrap}
+  .fact-table tr:last-child th,.fact-table tr:last-child td{border-bottom:1px solid var(--line-light)}
+  .textlink{display:inline-block;margin-top:18px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px;font-size:15px}
+  .textlink:hover{color:var(--accent);border-color:var(--accent)}
+  @media(max-width:820px){.profile-grid{grid-template-columns:1fr}}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .gallery figure{margin:0}
+  .gallery img{width:100%;aspect-ratio:3/3.4;object-fit:cover}
+  .gallery figcaption{font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.05em}
+  .g1 img{object-position:center 20%}.g2 img{object-position:center 30%}.g3 img{object-position:center 15%}
+  @media(max-width:700px){.gallery{grid-template-columns:1fr 1fr}.gallery figure:last-child{grid-column:1/-1}.gallery figure:last-child img{aspect-ratio:3/2.2}}
+
+  /* Ideas (dark) */
+  .ideas{background:var(--dark);color:#f2eff9}
+  .ideas .sec-label{color:var(--accent-soft)}
+  .ideas .sec-head .side{color:#c9c3dd}
+  .ideas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3.4vw,44px)}
+  .idea{border-top:1px solid #4a4460;padding-top:26px}
+  .idea .i-en{font-size:11.5px;letter-spacing:.28em;color:var(--accent-soft);font-weight:700;margin:0 0 14px}
+  .idea h3{margin:0 0 16px;font-size:20px;font-weight:700}
+  .idea ul{margin:0;padding:0;list-style:none;color:#d8d3e8;font-size:15px}
+  .idea li{padding:3px 0}
+  .idea li.plus::before{content:"+ ";color:var(--accent-soft)}
+  .ideas .fine{font-size:12.5px;color:#9d96b5;margin-top:36px}
+  @media(max-width:760px){.ideas-grid{grid-template-columns:1fr}}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.6vw,32px)}
+  .step{border-top:1px solid var(--line);padding-top:20px}
+  .step .n{font-family:var(--latin);font-style:italic;font-size:30px;color:var(--accent-soft);line-height:1}
+  .step h3{margin:14px 0 8px;font-size:17px}
+  .step p{margin:0;color:var(--ink-soft);font-size:14.5px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.steps{grid-template-columns:1fr}}
+
+  /* FAQ */
+  .faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(26px,5vw,80px);align-items:start}
+  .faq-item{border-top:1px solid var(--line)}
+  .faq-item:last-child{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;background:none;border:none;font:inherit;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 2px;cursor:pointer;font-size:16px;color:var(--ink)}
+  .faq-q .pm{color:var(--accent);font-size:22px;line-height:1;flex:none;transition:transform .25s}
+  .faq-item.open .pm{transform:rotate(45deg)}
+  .faq-a{display:none;padding:0 2px 22px;color:var(--ink-soft);font-size:15px;max-width:44em}
+  .faq-item.open .faq-a{display:block}
+  @media(max-width:760px){.faq-grid{grid-template-columns:1fr}}
+
+  /* Contact */
+  .contact{background:var(--wash)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(30px,5vw,84px);align-items:start}
+  .contact-txt h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.8vw,42px);line-height:1.45;margin:14px 0 20px}
+  .contact-txt p{color:var(--ink-soft);font-size:15.5px;margin:0 0 22px}
+  .direct{border-left:2px solid var(--accent-soft);padding:4px 0 4px 18px;font-size:14.5px;color:var(--ink-soft)}
+  .direct a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:13.5px;font-weight:700;margin-bottom:8px;letter-spacing:.03em}
+  .field label .req{color:var(--accent);font-size:11.5px;font-weight:500;margin-left:7px;letter-spacing:.14em}
+  .field label .opt{color:var(--muted);font-size:11.5px;font-weight:500;margin-left:7px;letter-spacing:.14em}
+  .field input,.field select,.field textarea{width:100%;font:inherit;font-size:15px;padding:13px 14px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:0;appearance:none}
+  .field textarea{min-height:130px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent-soft);outline-offset:0;border-color:var(--accent)}
+  .form-msg{display:none;margin:0 0 16px;padding:13px 16px;font-size:14.5px}
+  .form-msg.err{display:block;background:#fbeeee;color:#8c2f2f;border:1px solid #e5b8b8}
+  .form-msg.ok{display:block;background:#eaf5ec;color:#245c2e;border:1px solid #b7d8bc}
+  form .btn{width:100%;padding:19px 22px;font-size:15.5px;cursor:pointer;font-family:var(--sans)}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr}form .row{grid-template-columns:1fr}}
+
+  /* Footer */
+  footer{padding:44px 0 54px}
+  .foot-in{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .foot-in .mid{font-size:13px;color:var(--muted)}
+  .foot-in .top-link{font-size:12px;letter-spacing:.2em;text-decoration:none;color:var(--ink-soft)}
+  .demo-tag{display:inline-block;margin-top:26px;font-size:12px;color:var(--muted);border:1px dashed var(--line);padding:5px 12px;letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top" aria-label="Yau Ching 邱晴 品牌合作專頁">
+      <span class="b-name">YAU CHING</span>
+      <span class="b-sub" style="display:block">BRAND PARTNERSHIPS</span>
+    </a>
+    <nav class="topnav" aria-label="主要導覽">
+      <a class="nl" href="#works" data-i18n="nav.works">合作案例</a>
+      <a class="nl" href="#services" data-i18n="nav.services">合作形式</a>
+      <a class="btn btn-outline" href="#contact"><span data-i18n="nav.cta">洽談合作</span> <span class="arr" aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="langbar">
+  <div class="wrap langbar-in">
+    <label for="langSel" data-i18n="lang.label">語言／地區</label>
+    <select id="langSel" aria-label="語言／地區">
+      <option value="zh-Hant" selected>繁體中文（香港）</option>
+      <option value="zh-Hans">简体中文</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-img">
+      <img src="assets/hero.jpg" alt="邱晴身穿白色針織上衣與白裙的造型相" data-i18n-alt="alt.hero" />
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <span class="credit">PHOTO：EAST WEEK</span>
+    <div class="wrap hero-inner">
+      <div class="hero-txt">
+        <p class="kicker">YAU CHING ／ 邱晴</p>
+        <h1 data-i18n-html="hero.h1">甜美外表，<br /><span class="hl">運動靈魂。</span></h1>
+        <p class="lead" data-i18n="hero.lead">從廣告拍攝到現場活動，邀請邱晴，為您的品牌增添亮點。參選嗰屆最年輕參選者之一，民選港姐冠軍，精通五種語言——青春、運動、甜美於一身。</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="#contact"><span data-i18n="hero.cta">查詢合作與報價</span> <span class="arr" aria-hidden="true">↗</span></a>
+          <p class="hero-note" data-i18n="hero.note">企業／品牌／廣告代理公司合作專區</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-strip" aria-hidden="true">
+    <div class="wrap scroll-in">
+      <span>HONG KONG TALENT. BEYOND BORDERS.</span>
+      <span>SCROLL ↓</span>
+    </div>
+  </div>
+
+  <!-- 01 SELECTED WORKS -->
+  <section class="blk" id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="sec-label">01 ／ SELECTED WORKS</p>
+          <h2 data-i18n-html="works.h2">由選美舞台，<br />走到國際賽場。</h2>
+        </div>
+        <p class="side" data-i18n="works.side">由 2017 年香港小姐舞台，到 2025 年最新主持與代表隊工作，完整履歷按年份由近至遠排列。</p>
+      </div>
+
+      <div class="case">
+        <div><div class="place">HOY TV</div><div class="meta" data-i18n="c1.meta">2025 ／ 電視節目</div></div>
+        <div class="c-main"><h3>《Girls On the Go》</h3><p data-i18n="c1.d">擔任旅遊節目女主角。</p></div>
+        <span class="idx">01</span>
+      </div>
+      <div class="case">
+        <div><div class="place">HONG KONG</div><div class="meta" data-i18n="c2.meta">2025 ／ 司儀主持</div></div>
+        <div class="c-main"><h3 data-i18n="c2.t">葵青區撲滅罪行綜藝節目</h3><p data-i18n="c2.d">擔任活動大會司儀。</p></div>
+        <span class="idx">02</span>
+      </div>
+      <div class="case">
+        <div><div class="place">NETHERLANDS</div><div class="meta" data-i18n="c3.meta">2025 ／ 運動代表隊</div></div>
+        <div class="c-main"><h3 data-i18n="c3.t">荷蘭飛盤世界盃</h3><p data-i18n="c3.d">以香港代表隊成員身份出戰飛盤世界盃。</p></div>
+        <span class="idx">03</span>
+      </div>
+      <div class="case">
+        <div><div class="place">ASIA</div><div class="meta" data-i18n="c4.meta">2025 ／ 運動代表隊</div></div>
+        <div class="c-main"><h3 data-i18n="c4.t">荷蘭飛盤亞洲盃</h3><p data-i18n="c4.d">以香港代表隊成員身份出戰飛盤亞洲盃。</p></div>
+        <span class="idx">04</span>
+      </div>
+      <div class="case">
+        <div><div class="place">MAGAZINE</div><div class="meta" data-i18n="c5.meta">2025–26 ／ 雜誌拍攝</div></div>
+        <div class="c-main"><h3 data-i18n="c5.t">港澳旅遊雜誌</h3><p data-i18n="c5.d">參與港澳旅遊雜誌拍攝。</p></div>
+        <span class="idx">05</span>
+      </div>
+      <div class="case">
+        <div><div class="place">RTHK</div><div class="meta" data-i18n="c6.meta">2025–至今 ／ 電視主持</div></div>
+        <div class="c-main"><h3>《港台體壇123》</h3><p data-i18n="c6.d">擔任節目主持。</p></div>
+        <span class="idx">06</span>
+      </div>
+      <div class="case">
+        <div><div class="place">RTHK</div><div class="meta" data-i18n="c7.meta">2025–至今 ／ 電台主持</div></div>
+        <div class="c-main"><h3 data-i18n="c7.t">香港電台第五台《香江暖流》</h3><p data-i18n="c7.d">擔任嘉賓主持。</p></div>
+        <span class="idx">07</span>
+      </div>
+      <div class="case">
+        <div><div class="place">HONG KONG</div><div class="meta" data-i18n="c8.meta">2024–至今 ／ 機構大使</div></div>
+        <div class="c-main"><h3 data-i18n="c8.t">中國香港新興運動總會</h3><p data-i18n="c8.d">擔任總會大使。</p></div>
+        <span class="idx">08</span>
+      </div>
+      <div class="case">
+        <div><div class="place">PHOTO BOOK</div><div class="meta" data-i18n="c9.meta">2024 ／ 寫真集</div></div>
+        <div class="c-main"><h3 data-i18n="c9.t">寫真集《晴》</h3><p data-i18n="c9.d">拍攝個人寫真集。</p></div>
+        <span class="idx">09</span>
+      </div>
+      <div class="case">
+        <div><div class="place">GUANGZHOU</div><div class="meta" data-i18n="c10.meta">2024 ／ 司儀主持</div></div>
+        <div class="c-main"><h3>VIMY 十周年晚宴</h3><p data-i18n="c10.d">擔任晚宴大會司儀。</p></div>
+        <span class="idx">10</span>
+      </div>
+      <div class="case">
+        <div><div class="place">XIAOMI</div><div class="meta" data-i18n="c11.meta">2023 ／ 品牌活動</div></div>
+        <div class="c-main"><h3 data-i18n="c11.t">小米旗艦店開幕</h3><p data-i18n="c11.d">擔任旗艦店開幕活動嘉賓。</p></div>
+        <span class="idx">11</span>
+      </div>
+      <div class="case">
+        <div><div class="place">RTHK</div><div class="meta" data-i18n="c12.meta">2021 ／ 電視主持</div></div>
+        <div class="c-main"><h3>《上網問功課》</h3><p data-i18n="c12.d">擔任節目主持。</p></div>
+        <span class="idx">12</span>
+      </div>
+      <div class="case">
+        <div><div class="place">VIU TV</div><div class="meta" data-i18n="c13.meta">2021 ／ 電視節目</div></div>
+        <div class="c-main"><h3>《阿媽唔易做》</h3><p data-i18n="c13.d">擔任客串嘉賓。</p></div>
+        <span class="idx">13</span>
+      </div>
+      <div class="case">
+        <div><div class="place">TVB</div><div class="meta" data-i18n="c14.meta">2018–20 ／ 電視主持</div></div>
+        <div class="c-main"><h3>《Think Big 天地》</h3><p data-i18n="c14.d">擔任節目主持。</p></div>
+        <span class="idx">14</span>
+      </div>
+      <div class="case">
+        <div><div class="place">TVB</div><div class="meta" data-i18n="c15.meta">2018 ／ 電視節目</div></div>
+        <div class="c-main"><h3>《美女廚房》</h3><p data-i18n="c15.d">擔任美女學徒。</p></div>
+        <span class="idx">15</span>
+      </div>
+      <div class="case">
+        <div><div class="place">MISS HK</div><div class="meta" data-i18n="c16.meta">2017 ／ 選美</div></div>
+        <div class="c-main"><h3 data-i18n="c16.t">香港小姐競選</h3><p data-i18n="c16.d">17 歲參選，晉級八強，一票之差，入唔到最後五強，其後獲觀眾一人一票選為「民選港姐冠軍」。</p></div>
+        <span class="idx">16</span>
+      </div>
+      <div class="case">
+        <div><div class="place">TVB</div><div class="meta" data-i18n="c17.meta">劇集 ／ 演出</div></div>
+        <div class="c-main"><h3 data-i18n="c17.t">劇集演出</h3><p data-i18n="c17.d">參演《愛·回家之開心速遞》《白色強人》《那些我愛過的人》。</p></div>
+        <span class="idx">17</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 WHAT WE CAN DO -->
+  <section class="blk svc-sec" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="sec-label">02 ／ WHAT WE CAN DO</p>
+          <h2 data-i18n-html="svc.h2">為您的品牌，<br />找到合適的合作方式。</h2>
+        </div>
+        <p class="side" data-i18n="svc.side">從單次拍攝到長期品牌合作，歡迎依照您的目標與合作計劃洽談。</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc">
+          <span class="s-num">01</span>
+          <p class="s-en">COMMERCIAL</p>
+          <h3 data-i18n="s1.t">廣告拍攝</h3>
+          <p data-i18n="s1.p">拍攝網上短片、平面廣告及電視廣告，以青春甜美的形象，展現產品與服務的魅力。</p>
+          <div class="tags"><span data-i18n="s1.g1">網上短片</span><span data-i18n="s1.g2">平面廣告</span><span data-i18n="s1.g3">電視廣告</span></div>
+        </div>
+        <div class="svc">
+          <span class="s-num">02</span>
+          <p class="s-en">EVENT APPEARANCE</p>
+          <h3 data-i18n="s2.t">活動出席・主持</h3>
+          <p data-i18n="s2.p">新品發佈會、展覽、店舖活動等，可依合作計劃安排嘉賓出席、訪談，或以五種語言擔任司儀主持。</p>
+          <div class="tags"><span data-i18n="s2.g1">新品發佈會</span><span data-i18n="s2.g2">五語司儀</span><span data-i18n="s2.g3">粉絲活動</span></div>
+        </div>
+        <div class="svc">
+          <span class="s-num">03</span>
+          <p class="s-en">AMBASSADOR</p>
+          <h3 data-i18n="s3.t">品牌代言</h3>
+          <p data-i18n="s3.p">可洽談定期廣告代言、品牌活動等長期合作，特別適合運動、健康、美妝與年輕消費品牌，與品牌共同傳達訊息。</p>
+          <div class="tags"><span data-i18n="s3.g1">品牌形象合作</span><span data-i18n="s3.g2">運動健康</span><span data-i18n="s3.g3">跨界合作</span></div>
+        </div>
+        <div class="svc">
+          <span class="s-num">04</span>
+          <p class="s-en">SOCIAL PROMOTION</p>
+          <h3 data-i18n="s4.t">社交媒體推廣</h3>
+          <p data-i18n="s4.p">產品介紹、服務推介或活動預告，可洽談結合本人社交平台出帖文與拍攝、出席活動的合作方案。</p>
+          <div class="tags"><span data-i18n="s4.g1">產品介紹</span><span data-i18n="s4.g2">活動宣傳</span><span data-i18n="s4.g3">旅遊美食</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 PROFILE -->
+  <section class="blk" id="profile">
+    <div class="wrap profile-grid">
+      <div class="profile-photo">
+        <img src="assets/profile.jpg" alt="邱晴近鏡特寫相" data-i18n-alt="alt.profile" />
+        <p class="credit">PHOTO：EAST WEEK</p>
+      </div>
+      <div class="profile-txt">
+        <p class="sec-label">03 ／ PROFILE</p>
+        <h2>YAU CHING</h2>
+        <p class="p-zh">邱 晴</p>
+        <p class="p-slogan" data-i18n-html="prof.slogan">青春。運動。<br />甜美，迎向更大舞台。</p>
+        <p class="body" data-i18n="prof.b1">2017 年，17 歲的邱晴踏上香港小姐舞台，成為史上最年輕參選港姐之一，晉級八強，一票之差，入唔到最後五強，其後更獲觀眾一人一票選為「民選港姐冠軍」。其後加入無綫電視成為藝員，主持兒童節目、出席綜藝節目，累積豐富上鏡經驗。</p>
+        <p class="body" data-i18n="prof.b2">離開 TVB 後，她以主持及 KOL 工作為主，足跡遍及旅遊、美食與娛樂推廣；運動場上，她是飛盤香港代表隊成員，曾出戰世界盃與亞洲盃。青春、運動、甜美集於一身，加上粵、普、英、日、韓五種語言，讓她能走上不同地區的舞台。</p>
+        <table class="fact-table">
+          <tr><th data-i18n="f.born.k">出生</th><td data-i18n="f.born.v">1999 年 9 月 14 日（27 歲）</td></tr>
+          <tr><th data-i18n="f.height.k">身高</th><td>174 cm</td></tr>
+          <tr><th data-i18n="f.lang.k">語言</th><td data-i18n="f.lang.v">粵語、普通話、英語、日語、韓語</td></tr>
+          <tr><th data-i18n="f.social.k">社交平台</th><td data-i18n-html="f.social.v">Instagram <a href="https://www.instagram.com/dear.yc" target="_blank" rel="noopener">@dear.yc</a>（89K+ 粉絲）</td></tr>
+          <tr><th data-i18n="f.sport.k">運動專長</th><td data-i18n="f.sport.v">飛盤、羽毛球、高爾夫、匹克球、單板滑雪、健身、單車、普拉提、尾波衝浪、泰拳</td></tr>
+          <tr><th data-i18n="f.hobby.k">其他興趣</th><td data-i18n="f.hobby.v">繪畫、烹飪、歌唱、化妝、美食、電競</td></tr>
+        </table>
+        <a class="textlink" href="#contact" data-i18n="prof.link">查詢邱晴合作邀約 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="blk" style="padding-top:0">
+    <div class="wrap">
+      <div class="gallery">
+        <figure class="g1"><img src="assets/hero.jpg" alt="邱晴白色造型全身相" data-i18n-alt="alt.g1" /><figcaption data-i18n="gal.1">甜美造型 — 白色針織配白裙</figcaption></figure>
+        <figure class="g2"><img src="assets/work.jpg" alt="邱晴坐在梳化上微笑的相片" data-i18n-alt="alt.g2" /><figcaption data-i18n="gal.2">親和笑容 — 活動現場拍攝</figcaption></figure>
+        <figure class="g3"><img src="assets/profile.jpg" alt="邱晴近鏡特寫" data-i18n-alt="alt.g3" /><figcaption data-i18n="gal.3">近鏡特寫 — 清新妝感</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 PROMOTION IDEAS -->
+  <section class="blk ideas">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="sec-label">04 ／ PROMOTION IDEAS</p>
+          <h2 data-i18n-html="ideas.h2">從合作計劃開始，<br />一起打造。</h2>
+        </div>
+        <p class="side" data-i18n="ideas.side">結合拍攝、現場出席與宣傳，以下為可洽談的合作方向。</p>
+      </div>
+      <div class="ideas-grid">
+        <div class="idea">
+          <p class="i-en">PRODUCT LAUNCH</p>
+          <h3 data-i18n="i1.t">讓新品被看見</h3>
+          <ul>
+            <li data-i18n="i1.a">拍攝產品介紹短片</li>
+            <li class="plus" data-i18n="i1.b">本人社交媒體推廣</li>
+            <li class="plus" data-i18n="i1.c">發佈會嘉賓出席</li>
+          </ul>
+        </div>
+        <div class="idea">
+          <p class="i-en">BRAND CAMPAIGN</p>
+          <h3 data-i18n="i2.t">邀請擔任廣告主角</h3>
+          <ul>
+            <li data-i18n="i2.a">拍攝短片及平面相片</li>
+            <li class="plus" data-i18n="i2.b">於約定地區及期間落廣告</li>
+            <li class="plus" data-i18n="i2.c">五語版本對鏡講稿拍攝</li>
+          </ul>
+        </div>
+        <div class="idea">
+          <p class="i-en">LIVE EXPERIENCE</p>
+          <h3 data-i18n="i3.t">邀請出席活動</h3>
+          <ul>
+            <li data-i18n="i3.a">活動前宣傳造勢</li>
+            <li class="plus" data-i18n="i3.b">嘉賓出席及訪談</li>
+            <li class="plus" data-i18n="i3.c">司儀主持（粵／普／英／日／韓）</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fine" data-i18n="ideas.fine">出席內容、廣告使用範圍及費用，將依合作計劃個別提案。</p>
+    </div>
+  </section>
+
+  <!-- 05 HOW IT WORKS -->
+  <section class="blk">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="sec-label">05 ／ HOW IT WORKS</p>
+          <h2 style="margin-top:14px" data-i18n="steps.h2">從查詢到執行。</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><h3 data-i18n="st1.t">提出查詢</h3><p data-i18n="st1.p">請提供合作目標、目標地區及預計時間表。</p></div>
+        <div class="step"><div class="n">02</div><h3 data-i18n="st2.t">合作計劃與報價</h3><p data-i18n="st2.p">了解拍攝、出席內容及廣告使用條件後，提供合作建議。</p></div>
+        <div class="step"><div class="n">03</div><h3 data-i18n="st3.t">簽約與準備</h3><p data-i18n="st3.p">確認合作條件後，安排拍攝或活動當日的準備工作。</p></div>
+        <div class="step"><div class="n">04</div><h3 data-i18n="st4.t">拍攝與出席</h3><p data-i18n="st4.p">依雙方確認的合作計劃及時間表執行。</p></div>
+      </div>
+
+      <div class="faq-grid" style="margin-top:clamp(60px,8vw,100px)">
+        <div>
+          <p class="sec-label">06 ／ FAQ</p>
+          <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,38px);margin:14px 0 0" data-i18n="faq.h2">常見問題。</h2>
+        </div>
+        <div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="q1">廣告代理公司也可以查詢嗎？</span><span class="pm" aria-hidden="true">+</span></button>
+            <div class="faq-a" data-i18n="a1">可以。品牌方、企業及廣告代理公司均歡迎查詢，請在表格中註明品牌與合作計劃概要，我們會按個別情況回覆建議與報價。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="q2">可以安排海外拍攝或活動出席嗎？</span><span class="pm" aria-hidden="true">+</span></button>
+            <div class="faq-a" data-i18n="a2">可以。邱晴曾代表香港出外比賽及出席活動，海外拍攝與出席可按行程安排，細節與相關費用將在籌備階段一併確認。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="q3">主持工作可以配合哪些語言？</span><span class="pm" aria-hidden="true">+</span></button>
+            <div class="faq-a" data-i18n="a3">邱晴能以粵語、普通話、英語、日語及韓語五種語言主持，適合國際品牌活動、發佈會及雙語場合。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="q4">費用如何計算？</span><span class="pm" aria-hidden="true">+</span></button>
+            <div class="faq-a" data-i18n="a4">費用按合作類型、拍攝或出席時數、廣告使用地區與期間等因素計算。提交查詢後，我們會按您的合作計劃提供個別報價。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="q5">合作計劃或預算尚未確定，也可以查詢嗎？</span><span class="pm" aria-hidden="true">+</span></button>
+            <div class="faq-a" data-i18n="a5">可以。即使方案仍在構思階段，也歡迎先提出目標與想法，我們可一同商討合適的合作方向。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="blk contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-txt">
+        <p class="sec-label">LET'S WORK TOGETHER</p>
+        <h2 data-i18n-html="ct.h2">您的下一個合作計劃，<br />邀請邱晴。</h2>
+        <p data-i18n="ct.p">廣告、活動出席及品牌合作，歡迎填妥以下表格查詢。</p>
+        <div class="direct" data-i18n-html="ct.direct">
+          您填寫的資料會組成一封電郵，傳送至合作聯絡電郵，以便回覆您的查詢。<br />
+          直接以電郵聯絡<br />
+          <a href="mailto:chingyaubb914@gmail.com">chingyaubb914@gmail.com</a><br />
+          Instagram：<a href="https://www.instagram.com/dear.yc" target="_blank" rel="noopener">@dear.yc</a>
+        </div>
+        <span class="demo-tag" data-i18n="ct.demo">DEMO 示範版 — 內容與聯絡資料可再調整</span>
+      </div>
+
+      <form id="enquiryForm" novalidate>
+        <p class="form-msg" id="formMsg" role="status"></p>
+        <div class="row">
+          <div class="field">
+            <label for="f-company"><span data-i18n="fm.company">公司名稱</span><span class="req" data-i18n="req">必填</span></label>
+            <input id="f-company" name="company" type="text" placeholder="請輸入公司名稱" data-i18n-ph="ph.company" autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="f-name"><span data-i18n="fm.name">聯絡人姓名</span><span class="req" data-i18n="req">必填</span></label>
+            <input id="f-name" name="name" type="text" placeholder="請輸入姓名" data-i18n-ph="ph.name" autocomplete="name" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-email"><span data-i18n="fm.email">電郵地址</span><span class="req" data-i18n="req">必填</span></label>
+          <input id="f-email" name="email" type="email" placeholder="name@company.com" autocomplete="email" />
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="f-region"><span data-i18n="fm.region">目標國家／地區</span><span class="req" data-i18n="req">必填</span></label>
+            <input id="f-region" name="region" type="text" value="香港" />
+          </div>
+          <div class="field">
+            <label for="f-type"><span data-i18n="fm.type">合作類型</span><span class="req" data-i18n="req">必填</span></label>
+            <select id="f-type" name="type">
+              <option value="" data-i18n="opt.type0">請選擇</option>
+              <option data-i18n="opt.type1">廣告拍攝</option>
+              <option data-i18n="opt.type2">活動出席／主持</option>
+              <option data-i18n="opt.type3">品牌代言</option>
+              <option data-i18n="opt.type4">社交媒體推廣</option>
+              <option data-i18n="opt.type5">其他／尚未確定</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="f-budget"><span data-i18n="fm.budget">預算範圍（港幣）</span><span class="opt" data-i18n="opt">選填</span></label>
+            <select id="f-budget" name="budget">
+              <option data-i18n="opt.budget0">尚未確定／希望討論</option>
+              <option data-i18n="opt.budget1">HK$30,000 以下</option>
+              <option>HK$30,000 – 80,000</option>
+              <option>HK$80,000 – 150,000</option>
+              <option data-i18n="opt.budget4">HK$150,000 以上</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-when"><span data-i18n="fm.when">預計合作時間</span><span class="opt" data-i18n="opt">選填</span></label>
+            <input id="f-when" name="when" type="text" placeholder="例：2026 年 12 月至 2027 年 2 月" data-i18n-ph="ph.when" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-site"><span data-i18n="fm.site">公司／品牌網站</span><span class="opt" data-i18n="opt">選填</span></label>
+          <input id="f-site" name="site" type="url" placeholder="https://" />
+        </div>
+        <div class="field">
+          <label for="f-need"><span data-i18n="fm.need">合作需求</span><span class="req" data-i18n="req">必填</span></label>
+          <textarea id="f-need" name="need" placeholder="請提供產品或服務、合作計劃概要，以及希望安排的合作內容。" data-i18n-ph="ph.need"></textarea>
+        </div>
+        <button class="btn btn-dark" type="submit"><span data-i18n="fm.submit">提交合作查詢</span> <span class="arr" aria-hidden="true">↗</span></button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="brand" href="#top" style="text-decoration:none">
+      <span class="b-name">YAU CHING</span>
+      <span class="b-sub" style="display:block">BRAND PARTNERSHIPS</span>
+    </a>
+    <p class="mid" data-i18n="foot.mid">邱晴｜廣告／活動／演出合作查詢</p>
+    <a class="top-link" href="#top">BACK TO TOP ↑</a>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function () {
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // ── Language switching (繁體 / 简体 / English) ──────────────
+  var I18N = {
+    'zh-Hans': {
+      'title': '邱晴｜广告／活动／演出合作查询',
+      'desc': 'Yau Ching 邱晴 品牌合作专页 — 广告拍摄、活动出席、品牌代言、社交媒体推广查询。参选那届最年轻参选者之一、民选港姐冠军，青春、运动、甜美于一身。',
+      'nav.works': '合作案例', 'nav.services': '合作形式', 'nav.cta': '洽谈合作',
+      'lang.label': '语言／地区',
+      'alt.hero': '邱晴身穿白色针织上衣与白裙的造型相',
+      'hero.h1': '甜美外表，<br /><span class="hl">运动灵魂。</span>',
+      'hero.lead': '从广告拍摄到现场活动，邀请邱晴，为您的品牌增添亮点。参选那届最年轻参选者之一，民选港姐冠军，精通五种语言——青春、运动、甜美于一身。',
+      'hero.cta': '查询合作与报价', 'hero.note': '企业／品牌／广告代理公司合作专区',
+      'works.h2': '由选美舞台，<br />走到国际赛场。',
+      'works.side': '由 2017 年香港小姐舞台，到 2025 年最新主持与代表队工作，完整履历按年份由近至远排列。',
+      'c1.meta': '2025 ／ 电视节目', 'c1.d': '担任旅游节目女主角。',
+      'c2.meta': '2025 ／ 司仪主持', 'c2.t': '葵青区扑灭罪行综艺节目', 'c2.d': '担任活动大会司仪。',
+      'c3.meta': '2025 ／ 运动代表队', 'c3.t': '荷兰飞盘世界杯', 'c3.d': '以香港代表队成员身份出战飞盘世界杯。',
+      'c4.meta': '2025 ／ 运动代表队', 'c4.t': '荷兰飞盘亚洲杯', 'c4.d': '以香港代表队成员身份出战飞盘亚洲杯。',
+      'c5.meta': '2025–26 ／ 杂志拍摄', 'c5.t': '港澳旅游杂志', 'c5.d': '参与港澳旅游杂志拍摄。',
+      'c6.meta': '2025–至今 ／ 电视主持', 'c6.d': '担任节目主持。',
+      'c7.meta': '2025–至今 ／ 电台主持', 'c7.t': '香港电台第五台《香江暖流》', 'c7.d': '担任嘉宾主持。',
+      'c8.meta': '2024–至今 ／ 机构大使', 'c8.t': '中国香港新兴运动总会', 'c8.d': '担任总会大使。',
+      'c9.meta': '2024 ／ 写真集', 'c9.t': '写真集《晴》', 'c9.d': '拍摄个人写真集。',
+      'c10.meta': '2024 ／ 司仪主持', 'c10.d': '担任晚宴大会司仪。',
+      'c11.meta': '2023 ／ 品牌活动', 'c11.t': '小米旗舰店开幕', 'c11.d': '担任旗舰店开幕活动嘉宾。',
+      'c12.meta': '2021 ／ 电视主持', 'c12.d': '担任节目主持。',
+      'c13.meta': '2021 ／ 电视节目', 'c13.d': '担任客串嘉宾。',
+      'c14.meta': '2018–20 ／ 电视主持', 'c14.d': '担任节目主持。',
+      'c15.meta': '2018 ／ 电视节目', 'c15.d': '担任美女学徒。',
+      'c16.meta': '2017 ／ 选美', 'c16.t': '香港小姐竞选', 'c16.d': '17 岁参选，晋级八强，一票之差，未能进入最后五强，其后获观众一人一票选为「民选港姐冠军」。',
+      'c17.meta': '剧集 ／ 演出', 'c17.t': '剧集演出', 'c17.d': '参演《爱·回家之开心速递》《白色强人》《那些我爱过的人》。',
+      'svc.h2': '为您的品牌，<br />找到合适的合作方式。',
+      'svc.side': '从单次拍摄到长期品牌合作，欢迎依照您的目标与合作计划洽谈。',
+      's1.t': '广告拍摄', 's1.p': '拍摄网上短片、平面广告及电视广告，以青春甜美的形象，展现产品与服务的魅力。',
+      's1.g1': '网上短片', 's1.g2': '平面广告', 's1.g3': '电视广告',
+      's2.t': '活动出席・主持', 's2.p': '新品发布会、展览、店铺活动等，可依合作计划安排嘉宾出席、访谈，或以五种语言担任司仪主持。',
+      's2.g1': '新品发布会', 's2.g2': '五语司仪', 's2.g3': '粉丝活动',
+      's3.t': '品牌代言', 's3.p': '可洽谈定期广告代言、品牌活动等长期合作，特别适合运动、健康、美妆与年轻消费品牌，与品牌共同传达讯息。',
+      's3.g1': '品牌形象合作', 's3.g2': '运动健康', 's3.g3': '跨界合作',
+      's4.t': '社交媒体推广', 's4.p': '产品介绍、服务推介或活动预告，可洽谈结合本人社交平台出帖文与拍摄、出席活动的合作方案。',
+      's4.g1': '产品介绍', 's4.g2': '活动宣传', 's4.g3': '旅游美食',
+      'alt.profile': '邱晴近镜特写相',
+      'prof.slogan': '青春。运动。<br />甜美，迎向更大舞台。',
+      'prof.b1': '2017 年，17 岁的邱晴踏上香港小姐舞台，成为史上最年轻参选港姐之一，晋级八强，一票之差，未能进入最后五强，其后更获观众一人一票选为「民选港姐冠军」。其后加入无线电视成为艺员，主持儿童节目、出席综艺节目，累积丰富上镜经验。',
+      'prof.b2': '离开 TVB 后，她以主持及 KOL 工作为主，足迹遍及旅游、美食与娱乐推广；运动场上，她是飞盘香港代表队成员，曾出战世界杯与亚洲杯。青春、运动、甜美集于一身，加上粤、普、英、日、韩五种语言，让她能走上不同地区的舞台。',
+      'f.born.k': '出生', 'f.born.v': '1999 年 9 月 14 日（27 岁）', 'f.height.k': '身高',
+      'f.lang.k': '语言', 'f.lang.v': '粤语、普通话、英语、日语、韩语',
+      'f.social.k': '社交平台', 'f.social.v': 'Instagram <a href="https://www.instagram.com/dear.yc" target="_blank" rel="noopener">@dear.yc</a>（89K+ 粉丝）',
+      'f.sport.k': '运动专长', 'f.sport.v': '飞盘、羽毛球、高尔夫、匹克球、单板滑雪、健身、单车、普拉提、尾波冲浪、泰拳',
+      'f.hobby.k': '其他兴趣', 'f.hobby.v': '绘画、烹饪、歌唱、化妆、美食、电竞',
+      'prof.link': '查询邱晴合作邀约 ↗',
+      'alt.g1': '邱晴白色造型全身相', 'alt.g2': '邱晴坐在沙发上微笑的相片', 'alt.g3': '邱晴近镜特写',
+      'gal.1': '甜美造型 — 白色针织配白裙', 'gal.2': '亲和笑容 — 活动现场拍摄', 'gal.3': '近镜特写 — 清新妆感',
+      'ideas.h2': '从合作计划开始，<br />一起打造。',
+      'ideas.side': '结合拍摄、现场出席与宣传，以下为可洽谈的合作方向。',
+      'i1.t': '让新品被看见', 'i1.a': '拍摄产品介绍短片', 'i1.b': '本人社交媒体推广', 'i1.c': '发布会嘉宾出席',
+      'i2.t': '邀请担任广告主角', 'i2.a': '拍摄短片及平面相片', 'i2.b': '于约定地区及期间投放广告', 'i2.c': '五语版本对镜讲稿拍摄',
+      'i3.t': '邀请出席活动', 'i3.a': '活动前宣传造势', 'i3.b': '嘉宾出席及访谈', 'i3.c': '司仪主持（粤／普／英／日／韩）',
+      'ideas.fine': '出席内容、广告使用范围及费用，将依合作计划个别提案。',
+      'steps.h2': '从查询到执行。',
+      'st1.t': '提出查询', 'st1.p': '请提供合作目标、目标地区及预计时间表。',
+      'st2.t': '合作计划与报价', 'st2.p': '了解拍摄、出席内容及广告使用条件后，提供合作建议。',
+      'st3.t': '签约与准备', 'st3.p': '确认合作条件后，安排拍摄或活动当日的准备工作。',
+      'st4.t': '拍摄与出席', 'st4.p': '依双方确认的合作计划及时间表执行。',
+      'faq.h2': '常见问题。',
+      'q1': '广告代理公司也可以查询吗？', 'a1': '可以。品牌方、企业及广告代理公司均欢迎查询，请在表格中注明品牌与合作计划概要，我们会按个别情况回复建议与报价。',
+      'q2': '可以安排海外拍摄或活动出席吗？', 'a2': '可以。邱晴曾代表香港出外比赛及出席活动，海外拍摄与出席可按行程安排，细节与相关费用将在筹备阶段一并确认。',
+      'q3': '主持工作可以配合哪些语言？', 'a3': '邱晴能以粤语、普通话、英语、日语及韩语五种语言主持，适合国际品牌活动、发布会及双语场合。',
+      'q4': '费用如何计算？', 'a4': '费用按合作类型、拍摄或出席时数、广告使用地区与期间等因素计算。提交查询后，我们会按您的合作计划提供个别报价。',
+      'q5': '合作计划或预算尚未确定，也可以查询吗？', 'a5': '可以。即使方案仍在构思阶段，也欢迎先提出目标与想法，我们可一同商讨合适的合作方向。',
+      'ct.h2': '您的下一个合作计划，<br />邀请邱晴。',
+      'ct.p': '广告、活动出席及品牌合作，欢迎填妥以下表格查询。',
+      'ct.direct': '您填写的资料会组成一封电邮，传送至合作联络电邮，以便回复您的查询。<br />直接以电邮联络<br /><a href="mailto:chingyaubb914@gmail.com">chingyaubb914@gmail.com</a><br />Instagram：<a href="https://www.instagram.com/dear.yc" target="_blank" rel="noopener">@dear.yc</a>',
+      'ct.demo': 'DEMO 示范版 — 内容与联络资料可再调整',
+      'fm.company': '公司名称', 'fm.name': '联络人姓名', 'fm.email': '电邮地址',
+      'fm.region': '目标国家／地区', 'fm.type': '合作类型', 'fm.budget': '预算范围（港币）',
+      'fm.when': '预计合作时间', 'fm.site': '公司／品牌网站', 'fm.need': '合作需求',
+      'fm.submit': '提交合作查询', 'req': '必填', 'opt': '选填',
+      'ph.company': '请输入公司名称', 'ph.name': '请输入姓名',
+      'ph.when': '例：2026 年 12 月至 2027 年 2 月',
+      'ph.need': '请提供产品或服务、合作计划概要，以及希望安排的合作内容。',
+      'opt.type0': '请选择', 'opt.type1': '广告拍摄', 'opt.type2': '活动出席／主持',
+      'opt.type3': '品牌代言', 'opt.type4': '社交媒体推广', 'opt.type5': '其他／尚未确定',
+      'opt.budget0': '尚未确定／希望讨论', 'opt.budget1': 'HK$30,000 以下', 'opt.budget4': 'HK$150,000 以上',
+      'foot.mid': '邱晴｜广告／活动／演出合作查询'
+    },
+    'en': {
+      'title': 'Yau Ching | Advertising / Events / Performances',
+      'desc': "Yau Ching — brand partnerships: commercial shoots, event appearances, endorsements and social media promotion. One of the youngest contestants in her pageant year and the people's-choice Miss Hong Kong champion — youth, athleticism and sweetness in one.",
+      'nav.works': 'Selected Works', 'nav.services': 'Services', 'nav.cta': 'Enquire Now',
+      'lang.label': 'Language / Region',
+      'alt.hero': 'Yau Ching in a white knit top and white skirt',
+      'hero.h1': 'A sweet presence,<br /><span class="hl">an athlete\'s spirit.</span>',
+      'hero.lead': "From commercial shoots to live events, invite Yau Ching to bring your brand into the spotlight. One of the youngest contestants in her pageant year and the people's-choice Miss Hong Kong champion, she speaks five languages — youth, athleticism and sweetness in one.",
+      'hero.cta': 'Enquire & Get a Quote', 'hero.note': 'For brands, companies and advertising agencies',
+      'works.h2': 'From the pageant stage<br />to the international arena.',
+      'works.side': 'From the 2017 Miss Hong Kong stage to her latest hosting and Hong Kong team appearances in 2025 — her full track record, newest first.',
+      'c1.meta': '2025 / TV Programme', 'c1.d': 'Lead presenter of the travel programme.',
+      'c2.meta': '2025 / Event MC', 'c2.t': 'Kwai Tsing District Fight Crime Variety Show', 'c2.d': 'Master of ceremonies for the event.',
+      'c3.meta': '2025 / Hong Kong Team', 'c3.t': 'Dutch Frisbee World Cup', 'c3.d': 'Competed at the World Cup as a member of the Hong Kong team.',
+      'c4.meta': '2025 / Hong Kong Team', 'c4.t': 'Dutch Frisbee Asian Cup', 'c4.d': 'Competed at the Asian Cup as a member of the Hong Kong team.',
+      'c5.meta': '2025–26 / Magazine Shoot', 'c5.t': 'Hong Kong & Macau Travel Magazine', 'c5.d': 'Featured in a Hong Kong–Macau travel magazine shoot.',
+      'c6.meta': '2025–Present / TV Host', 'c6.d': 'Programme host.',
+      'c7.meta': '2025–Present / Radio Host', 'c7.t': 'RTHK Radio 5 — 《香江暖流》', 'c7.d': 'Guest host.',
+      'c8.meta': '2024–Present / Ambassador', 'c8.t': 'Emerging Sports Federation of Hong Kong, China', 'c8.d': 'Ambassador of the federation.',
+      'c9.meta': '2024 / Photo Book', 'c9.t': 'Photo Book "Qing"', 'c9.d': 'Released her personal photo book.',
+      'c10.meta': '2024 / Event MC', 'c10.d': 'MC for the anniversary gala dinner.',
+      'c11.meta': '2023 / Brand Event', 'c11.t': 'Xiaomi Flagship Store Opening', 'c11.d': 'Guest at the flagship store opening event.',
+      'c12.meta': '2021 / TV Host', 'c12.d': 'Programme host.',
+      'c13.meta': '2021 / TV Programme', 'c13.d': 'Guest appearance.',
+      'c14.meta': '2018–20 / TV Host', 'c14.d': 'Programme host.',
+      'c15.meta': '2018 / TV Programme', 'c15.d': '"Beauty apprentice" on the cooking show.',
+      'c16.meta': '2017 / Pageant', 'c16.t': 'Miss Hong Kong Pageant', 'c16.d': 'Entered at 17, reached the Top 8, missing the final five by a single vote, and was later voted "People\'s Choice Miss Hong Kong Champion" by public vote.',
+      'c17.meta': 'TV Drama / Acting', 'c17.t': 'TV Drama Roles', 'c17.d': 'Appeared in the TV dramas 《愛·回家之開心速遞》, 《白色強人》 and 《那些我愛過的人》.',
+      'svc.h2': 'Find the right way<br />to work with your brand.',
+      'svc.side': "From one-off shoots to long-term brand partnerships — tell us your goals and let's plan together.",
+      's1.t': 'Commercial Shoots', 's1.p': 'Online videos, print ads and TV commercials — a youthful, sweet image that shows off your products and services.',
+      's1.g1': 'Online Videos', 's1.g2': 'Print Ads', 's1.g3': 'TV Commercials',
+      's2.t': 'Events & Hosting', 's2.p': 'Product launches, exhibitions and store events — guest appearances and interviews, or hosting in five languages.',
+      's2.g1': 'Product Launches', 's2.g2': 'Hosting in 5 Languages', 's2.g3': 'Fan Events',
+      's3.t': 'Brand Endorsement', 's3.p': 'Longer-term partnerships — recurring endorsements and brand events, a natural fit for sports, health, beauty and youth brands, sharing your message together.',
+      's3.g1': 'Brand Image Partnerships', 's3.g2': 'Sports & Health', 's3.g3': 'Cross-over Collaborations',
+      's4.t': 'Social Media Promotion', 's4.p': 'Product features, service spotlights and event previews — packages combining posts and shoots on her own social channels with event appearances.',
+      's4.g1': 'Product Features', 's4.g2': 'Event Promotion', 's4.g3': 'Travel & Food',
+      'alt.profile': 'Close-up portrait of Yau Ching',
+      'prof.slogan': 'Youth. Sport.<br />Sweetness, ready for a bigger stage.',
+      'prof.b1': "In 2017, at just 17, Yau Ching stepped onto the Miss Hong Kong stage as one of the youngest contestants in the pageant's history, reached the Top 8, missing the final five by a single vote, and was later voted \"People's Choice Miss Hong Kong Champion\" by the public. She then joined TVB as an artiste, hosting children's programmes and appearing in variety shows, building extensive on-camera experience.",
+      'prof.b2': 'Since leaving TVB, she has focused on hosting and KOL work, with appearances across travel, food and entertainment promotion. On the sports field, she represents Hong Kong in frisbee, having competed at both the World Cup and the Asian Cup. Youth, athleticism and sweetness in one — plus five languages: Cantonese, Mandarin, English, Japanese and Korean — take her to stages across the region.',
+      'f.born.k': 'Born', 'f.born.v': '14 September 1999 (age 27)', 'f.height.k': 'Height',
+      'f.lang.k': 'Languages', 'f.lang.v': 'Cantonese, Mandarin, English, Japanese, Korean',
+      'f.social.k': 'Social', 'f.social.v': 'Instagram <a href="https://www.instagram.com/dear.yc" target="_blank" rel="noopener">@dear.yc</a> (89K+ followers)',
+      'f.sport.k': 'Sports', 'f.sport.v': 'Frisbee, badminton, golf, pickleball, snowboarding, fitness, cycling, Pilates, wakesurfing, Muay Thai',
+      'f.hobby.k': 'Interests', 'f.hobby.v': 'Painting, cooking, singing, make-up, food, esports',
+      'prof.link': 'Enquire about booking Yau Ching ↗',
+      'alt.g1': 'Full-length shot of Yau Ching in a white outfit', 'alt.g2': 'Yau Ching smiling on a sofa', 'alt.g3': 'Close-up of Yau Ching',
+      'gal.1': 'Sweet look — white knit top and skirt', 'gal.2': 'A warm smile — shot at a live event', 'gal.3': 'Close-up — fresh, natural make-up',
+      'ideas.h2': "Let's build it together,<br />starting with your plan.",
+      'ideas.side': 'Combining shoots, live appearances and promotion — directions we can explore together.',
+      'i1.t': 'Get your launch seen', 'i1.a': 'Shoot a product intro video', 'i1.b': 'Promotion on her social channels', 'i1.c': 'Guest appearance at the launch',
+      'i2.t': 'Star of your campaign', 'i2.a': 'Video and photo shoot', 'i2.b': 'Ads in agreed regions and periods', 'i2.c': 'To-camera scripts in five languages',
+      'i3.t': 'Invite her to your event', 'i3.a': 'Pre-event buzz', 'i3.b': 'Appearance and interviews', 'i3.c': 'Hosting (Cantonese / Mandarin / English / Japanese / Korean)',
+      'ideas.fine': 'Appearance details, usage scope and fees are proposed individually for each partnership plan.',
+      'steps.h2': 'From enquiry to execution.',
+      'st1.t': 'Send an enquiry', 'st1.p': 'Share your goals, target regions and expected timeline.',
+      'st2.t': 'Plan & quotation', 'st2.p': "Once we understand the shoot, appearance and ad usage terms, we'll send a proposal.",
+      'st3.t': 'Contract & preparation', 'st3.p': 'With terms confirmed, we prepare for the shoot or event day.',
+      'st4.t': 'Shoot & appearance', 'st4.p': 'Delivered to the agreed plan and schedule.',
+      'faq.h2': 'FAQ.',
+      'q1': 'Can advertising agencies enquire too?', 'a1': "Yes — brands, companies and advertising agencies are all welcome. Note the brand and a brief outline of the plan in the form, and we'll reply with a tailored proposal and quote.",
+      'q2': 'Are overseas shoots and appearances possible?', 'a2': 'Yes. Yau Ching has represented Hong Kong at overseas competitions and events; overseas shoots and appearances can be arranged around her schedule, with details and related costs confirmed during planning.',
+      'q3': 'Which languages can she host in?', 'a3': 'She hosts in Cantonese, Mandarin, English, Japanese and Korean — ideal for international brand events, launches and bilingual occasions.',
+      'q4': 'How are fees calculated?', 'a4': "Fees depend on the type of partnership, shoot or appearance hours, and the regions and period of ad usage. Send an enquiry and we'll quote for your specific plan.",
+      'q5': 'Can I enquire before the plan or budget is finalised?', 'a5': "Absolutely. Even at the idea stage, share your goals and thoughts and we'll work out the right direction together.",
+      'ct.h2': 'Your next campaign<br />starts with Yau Ching.',
+      'ct.p': 'For advertising, event appearances and brand partnerships, please complete the form below.',
+      'ct.direct': 'Your details will be composed into an email to our partnerships inbox so we can reply to your enquiry.<br />Or email us directly<br /><a href="mailto:chingyaubb914@gmail.com">chingyaubb914@gmail.com</a><br />Instagram: <a href="https://www.instagram.com/dear.yc" target="_blank" rel="noopener">@dear.yc</a>',
+      'ct.demo': 'DEMO — content and contact details subject to change',
+      'fm.company': 'Company name', 'fm.name': 'Contact name', 'fm.email': 'Email address',
+      'fm.region': 'Target country / region', 'fm.type': 'Type of partnership', 'fm.budget': 'Budget range (HKD)',
+      'fm.when': 'Expected timing', 'fm.site': 'Company / brand website', 'fm.need': 'What you need',
+      'fm.submit': 'Submit Enquiry', 'req': 'Required', 'opt': 'Optional',
+      'ph.company': 'e.g. ABC Company Ltd.', 'ph.name': 'Your name',
+      'ph.when': 'e.g. Dec 2026 – Feb 2027',
+      'ph.need': "Tell us about your product or service, a brief outline of the plan, and what you'd like to arrange.",
+      'opt.type0': 'Please select', 'opt.type1': 'Commercial shoot', 'opt.type2': 'Event appearance / hosting',
+      'opt.type3': 'Brand endorsement', 'opt.type4': 'Social media promotion', 'opt.type5': 'Other / not sure yet',
+      'opt.budget0': "Not sure yet / let's discuss", 'opt.budget1': 'Under HK$30,000', 'opt.budget4': 'HK$150,000 or above',
+      'foot.mid': 'Yau Ching | Advertising / Events / Performances'
+    }
+  };
+
+  var STR = {
+    'zh-Hant': {
+      miss: '請填寫所有必填欄位（公司名稱、聯絡人、電郵、目標國家／地區、合作類型、合作需求）。',
+      bad: '電郵地址格式似乎不正確，請檢查後再提交。',
+      ok: '正在為您開啟電郵程式，內容已自動填好，按傳送即可完成查詢。',
+      subj: '品牌合作查詢 — ',
+      labels: ['公司名稱：', '聯絡人：', '電郵：', '目標國家／地區：', '合作類型：', '預算範圍：', '預計合作時間：', '公司／品牌網站：'],
+      tail: '合作需求：', unfilled: '（未填寫）'
+    },
+    'zh-Hans': {
+      miss: '请填写所有必填栏位（公司名称、联络人、电邮、目标国家／地区、合作类型、合作需求）。',
+      bad: '电邮地址格式似乎不正确，请检查后再提交。',
+      ok: '正在为您开启电邮程式，内容已自动填好，按传送即可完成查询。',
+      subj: '品牌合作查询 — ',
+      labels: ['公司名称：', '联络人：', '电邮：', '目标国家／地区：', '合作类型：', '预算范围：', '预计合作时间：', '公司／品牌网站：'],
+      tail: '合作需求：', unfilled: '（未填写）'
+    },
+    'en': {
+      miss: 'Please complete all required fields (company, contact name, email, target country/region, type of partnership, what you need).',
+      bad: "That email address doesn't look right — please check and try again.",
+      ok: 'Opening your email app with everything filled in — just press send to complete your enquiry.',
+      subj: 'Brand partnership enquiry — ',
+      labels: ['Company: ', 'Contact: ', 'Email: ', 'Target country / region: ', 'Type of partnership: ', 'Budget range: ', 'Expected timing: ', 'Company / brand website: '],
+      tail: 'What you need:', unfilled: '(not provided)'
+    }
+  };
+
+  var curLang = 'zh-Hant';
+  var ORIG_TITLE = document.title;
+  var metaDesc = document.getElementById('metaDesc');
+  var ORIG_DESC = metaDesc.getAttribute('content');
+  var regionInput = document.getElementById('f-region');
+  var REGION_DEFAULTS = ['香港', 'Hong Kong'];
+
+  function applyLang(lang) {
+    curLang = lang;
+    var d = I18N[lang] || {};
+    document.documentElement.lang = lang === 'en' ? 'en' : (lang === 'zh-Hans' ? 'zh-Hans' : 'zh-Hant-HK');
+    document.title = lang === 'zh-Hant' ? ORIG_TITLE : (d['title'] || ORIG_TITLE);
+    metaDesc.setAttribute('content', lang === 'zh-Hant' ? ORIG_DESC : (d['desc'] || ORIG_DESC));
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      if (el._o === undefined) el._o = el.textContent;
+      var k = el.getAttribute('data-i18n');
+      el.textContent = lang === 'zh-Hant' ? el._o : (d[k] !== undefined ? d[k] : el._o);
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      if (el._oh === undefined) el._oh = el.innerHTML;
+      var k = el.getAttribute('data-i18n-html');
+      el.innerHTML = lang === 'zh-Hant' ? el._oh : (d[k] !== undefined ? d[k] : el._oh);
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+      if (el._op === undefined) el._op = el.getAttribute('placeholder') || '';
+      var k = el.getAttribute('data-i18n-ph');
+      el.setAttribute('placeholder', lang === 'zh-Hant' ? el._op : (d[k] !== undefined ? d[k] : el._op));
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      if (el._oa === undefined) el._oa = el.getAttribute('alt') || '';
+      var k = el.getAttribute('data-i18n-alt');
+      el.setAttribute('alt', lang === 'zh-Hant' ? el._oa : (d[k] !== undefined ? d[k] : el._oa));
+    });
+    if (REGION_DEFAULTS.indexOf(regionInput.value) !== -1 || regionInput.value === '') {
+      regionInput.value = lang === 'en' ? 'Hong Kong' : '香港';
+    }
+  }
+  document.getElementById('langSel').addEventListener('change', function () { applyLang(this.value); });
+
+  // Enquiry form → compose an email (no server in this demo)
+  var form = document.getElementById('enquiryForm');
+  var msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var S = STR[curLang];
+    var v = function (id) { return document.getElementById(id).value.trim(); };
+    var company = v('f-company'), name = v('f-name'), email = v('f-email'),
+        region = v('f-region'), type = v('f-type'), need = v('f-need');
+    msg.className = 'form-msg';
+    if (!company || !name || !email || !region || !type || !need) {
+      msg.classList.add('err');
+      msg.textContent = S.miss;
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.classList.add('err');
+      msg.textContent = S.bad;
+      return;
+    }
+    var L = S.labels;
+    var lines = [
+      L[0] + company,
+      L[1] + name,
+      L[2] + email,
+      L[3] + region,
+      L[4] + type,
+      L[5] + v('f-budget'),
+      L[6] + (v('f-when') || S.unfilled),
+      L[7] + (v('f-site') || S.unfilled),
+      '',
+      S.tail,
+      need
+    ];
+    var href = 'mailto:chingyaubb914@gmail.com'
+      + '?subject=' + encodeURIComponent(S.subj + company + '（' + type + '）')
+      + '&body=' + encodeURIComponent(lines.join('\n'));
+    msg.classList.add('ok');
+    msg.textContent = S.ok;
+    window.location.href = href;
+  });
+</script>
+</body>
+</html>
